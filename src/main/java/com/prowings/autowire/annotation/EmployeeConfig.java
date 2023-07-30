@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class EmployeeConfig {
 	
-	@Bean(name = "emp3", autowire = Autowire.BY_TYPE)
+	@Bean(name = "emp3", autowire = Autowire.BY_TYPE/*, autowireCandidate = false*/)
 	public Employee getEmployee1()
 	{
 		Employee e1 = new Employee();

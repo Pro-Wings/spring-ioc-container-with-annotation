@@ -22,14 +22,14 @@ public class Employee {
 		this.dept = dept;
 		System.out.println("setting dept by 1-arg constructor");
 	}
-	
+
 	@Autowired
 	public Employee(int id, String name, Department dept) {
-	super();
-	this.id = id;
-	this.name = name;
-	this.dept = dept;
-}
+		super();
+		this.id = id;
+		this.name = name;
+		this.dept = dept;
+	}
 
 	public int getId() {
 		return id;

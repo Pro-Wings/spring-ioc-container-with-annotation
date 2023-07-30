@@ -1,9 +1,11 @@
 package com.prowings.autowire.annotation;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component(value = "mngr1")
+@Scope()
 public class Manager {
 	@Value(value = "1234")
 	int id;
