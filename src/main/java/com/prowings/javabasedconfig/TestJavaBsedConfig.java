@@ -1,5 +1,7 @@
 package com.prowings.javabasedconfig;
 
+import java.util.Arrays;
+
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class TestJavaBsedConfig {
@@ -12,11 +14,15 @@ public class TestJavaBsedConfig {
 		context.register(ShoppingListConfig.class);
 		context.refresh();
 		
+		System.out.println("Total Beans in container : "+context.getBeanDefinitionCount());
+		
+		System.out.println("Bean names : "+Arrays.toString(context.getBeanDefinitionNames()));
+		
 		Device lenovoLaptop = context.getBean("lenovo", Laptop.class);
 		Device hpLaptop = context.getBean("hp", Laptop.class);
 		
-		Device iPhone = context.getBean(Mobile.class);
-		Device mIPhone = context.getBean(Mobile.class);
+		Device iPhone = context.getBean("iPhone", Mobile.class);
+		Device mIPhone = context.getBean("mIPhone", Mobile.class);
 		
 		System.out.println(lenovoLaptop);
 		System.out.println(hpLaptop);
@@ -35,6 +41,11 @@ public class TestJavaBsedConfig {
 
 		
 		System.out.println(list1 == list2);
+		
+		System.out.println("Total Beans in container : "+context.getBeanDefinitionCount());
+		
+		System.out.println("Bean names : "+Arrays.toString(context.getBeanDefinitionNames()));
+
 	}
 
 }

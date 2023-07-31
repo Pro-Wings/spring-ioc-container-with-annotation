@@ -4,14 +4,17 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Scope;
 
 @Configuration
+//@Lazy
 @ComponentScan("com.prowings.javabasedconfig")
 public class ShoppingListConfig {
 	
 	@Bean(name = "lenovo")
+//	@Lazy
 	public Device getLenovoLaptop()
 	{
 		Laptop lenovo = new Laptop();
@@ -22,6 +25,7 @@ public class ShoppingListConfig {
 	}
 
 	@Bean(name = "hp")
+//	@Lazy
 	public Device getHpLaptop()
 	{
 		Laptop hp = new Laptop();
@@ -32,7 +36,7 @@ public class ShoppingListConfig {
 	}
 
 	@Bean(name = "iPhone")
-	@Scope("prototype")
+//	@Scope("prototype")
 	public Device getIphone()
 	{
 		Mobile iPhone = new Mobile();
@@ -43,7 +47,6 @@ public class ShoppingListConfig {
 	}
 
 	@Bean(name = "mIPhone")
-	@Primary
 	public Device getMIphone()
 	{
 		Mobile mIPhone = new Mobile();

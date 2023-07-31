@@ -1,5 +1,8 @@
 package com.prowings.javabasedconfig;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 public class Mobile extends Device{
 
     private int batteryCapacity;
@@ -20,6 +23,17 @@ public class Mobile extends Device{
 		this.batteryCapacity = batteryCapacity;
 	}
 
+	@PostConstruct
+    public void init()
+    {
+    	System.out.println("Mobile bean is created!!");
+    }
+
+	@PreDestroy
+	public void destroy()
+	{
+		System.out.println("Mobile bean is destroying!!");
+	}
 	
     
 }
